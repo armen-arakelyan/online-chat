@@ -1,0 +1,57 @@
+* {
+  background-color: black;
+  color: white;
+}
+
+.App {
+  text-align: center;
+}
+
+.allMessages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.msg {
+  animation: newMsg 0.5s ease;
+  background-color: red;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid rebeccapurple;
+  outline: none;
+  font-size: 20px;
+  padding: 5px;
+}
+
+input:focus {
+  border-bottom: 2px solid rebeccapurple;
+}
+
+button {
+  background-color: rebeccapurple;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+@keyframes newMsg {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
