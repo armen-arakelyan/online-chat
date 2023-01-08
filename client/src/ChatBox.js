@@ -6,8 +6,15 @@ const ChatBox = ({ socket, name }) => {
     useEffect(() => {
         socket.on('newMsg', msg => {
             setData(prev => [...prev, msg])
+            const data = JSON.parse(localStorage.getItem('messages')) || [];
+            localStorage.setItem('messages', JSON.stringify([...data, msg]))
         })
     }, [socket])
+
+    useEffect(() => {
+        const data = JSON.parse(localStorage.getItem('messages')) || [];
+        setData(data)
+    }, [])
 
     return (
         <div className='allMessages'>
